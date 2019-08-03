@@ -11,7 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.employee.exceptions.DepartmentNotFoundException;
 import com.example.employee.models.EmployeeDepartment;
 import com.example.employee.service.DepartmentService;
-
+/**
+ * 
+ *   @author Dave
+ *	Dev date 4th August 2019
+ */
 @Controller
 public class PersonalController {
 	
@@ -47,12 +51,10 @@ public class PersonalController {
 		String errorMessage = null;
 		try {
 			ed = departmentService.getDepartment(id);
-		} catch (DepartmentNotFoundException e) {
-			// TODO Auto-generated catch block
+		} catch (DepartmentNotFoundException e) {			
 			errorMessage = e.getMessage();
 			e.printStackTrace();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {			
 			errorMessage = e.getMessage();
 			e.printStackTrace();
 		}finally {
@@ -62,6 +64,5 @@ public class PersonalController {
 			}
 			return ed;			
 		}
-
 	}
 }
